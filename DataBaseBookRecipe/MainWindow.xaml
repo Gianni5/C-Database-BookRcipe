@@ -1,0 +1,39 @@
+﻿<Window x:Class="DataBaseBookRecipe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseBookRecipe"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="676.8" Width="800">
+    <Window.Resources>
+        <Image x:Key="SOff" Source="/DataBaseBookRecipe;component/starOff.png" Height="50" Width="50" />
+        <Image x:Key="SOn" Source="/DataBaseBookRecipe;component/starON.png" Height="50" Width="50"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="567*"/>
+            <ColumnDefinition Width="227*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="RecipeList" HorizontalAlignment="Left" Height="286" Margin="21,26,0,0" VerticalAlignment="Top" Width="510" SelectionChanged="RecipeList_SelectionChanged"/>
+        <ListView x:Name="IngridientListView" HorizontalAlignment="Left" Height="286" Margin="536,26,0,0" VerticalAlignment="Top" Width="232" Grid.ColumnSpan="2"/>
+        <Button x:Name="AddNewButton" Content="ADD NEW" HorizontalAlignment="Left" Margin="435,471,0,0" VerticalAlignment="Top" Width="75" Click="AddNewButton_Click" FontWeight="Bold"/>
+        <Button x:Name="UpdateBtn" HorizontalAlignment="Left" Margin="111.2,572,0,0" VerticalAlignment="Top" Width="90" Click="UpdateBtn_Click" Height="29" Content="UPDATE" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="RecipeAddBox" HorizontalAlignment="Left" Height="35" Margin="123,462,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301"/>
+        <Label x:Name="AddRecipeLab" Content="ADD RECIPE" HorizontalAlignment="Left" Margin="8,460,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="AddIngredientLab" Content="ADD INGREDIENT" HorizontalAlignment="Left" Margin="8,509,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="MethodLabel" Content="METHOD &amp; STEPS" HorizontalAlignment="Left" Margin="334,317,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="RecipesLabel" Content="RECIPES" HorizontalAlignment="Left" Margin="203,0,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="IngredientsLabel" Content="INGREDIENTS" HorizontalAlignment="Left" Margin="43.2,0,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <ComboBox x:Name="AddIngrComBox" HorizontalAlignment="Left" Margin="123,511,0,0" VerticalAlignment="Top" Width="121" Height="26" SelectionChanged="AddIngrComBox_SelectionChanged" />
+        <TextBox x:Name="StepsTexBo" HorizontalAlignment="Left" Height="113" Margin="21,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="747" Grid.ColumnSpan="2" TextChanged="StepsTexBo_TextChanged"/>
+
+        <Button Click="StarButton_Click" Name="MediaButton" Margin="111.2,471,25.6,110.2" Grid.Column="1">
+            <DynamicResource ResourceKey="SOff"/>
+        </Button>
+        <TextBox x:Name="QtyAddBox" HorizontalAlignment="Left" Height="29" Margin="123,550,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" TextChanged="QtyAddBox_TextChanged"/>
+        <Label x:Name="AddQtyLab" Content="ADD QUANTITY" HorizontalAlignment="Left" Margin="10,542,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="AddIngQty" Content="ADD ING. QTY." HorizontalAlignment="Left" Margin="123,597,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" Click="AddIngQty_Click"/>
+        <Button x:Name="DeleteBtn" Content="DELETE" HorizontalAlignment="Left" Margin="536,471,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" Click="DeleteBtn_Click" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
